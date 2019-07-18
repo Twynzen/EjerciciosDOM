@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DOMpractica</title>
+  </head>
+  <body>
+    <form  action="post.php" id="f" name="elformulario">
+      <label for="campo" id="eltiqCampo">Campo de texto</label>
+      <input type="text" name="campo" size="40">
+    </form>
+
+    <script>
+      console.log(document.forms[0].action);
+      //document.forms[0].elements[0].value = 'Hola a todos!!1';
+      //document.forms[0].campo.value = 'Hola a todos 2!!';
+      document.forms.elformulario.campo.value = 'Hola a todos!!3';
+
+      document.getElementById('eltiqCampo').textContent = 'AKI!!';
+    </script>
+  </body>
+</html>
