@@ -9,7 +9,7 @@
   <body>
     <form  action="post.php" id="f" name="elformulario">
       <label for="campo" id="eltiqCampo">Campo de texto</label>
-      <input type="text" name="campo" size="40">
+      <input type="text" name="campo" size="40" id="c1">
     </form>
 
     <script>
@@ -18,7 +18,17 @@
       //document.forms[0].campo.value = 'Hola a todos 2!!';
       document.forms.elformulario.campo.value = 'Hola a todos!!3';
 
-      document.getElementById('eltiqCampo').textContent = 'AKI!!';
+      //document.getElementById('eltiqCampo').textContent = 'AKI!!';
+      document.getElementById('eltiqCampo').addEventListener('click',cambiaFoco);
+
+      function cambiaFoco(){
+          document.forms.elformulario.campo.focus()
+      }
+      document.getElementById('c1').addEventListener('keyup',function(){
+        //this ----> Es una referencia al objeto al  cual se detecto el evento document.forms.elformulario.campo.value = this.value
+        console.log('Lo que hay escrito es: ',this.value);
+      } );
+
     </script>
   </body>
 </html>
